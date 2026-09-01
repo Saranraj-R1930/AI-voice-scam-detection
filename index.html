@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoxShield AI – Voice Scam Detection System</title>
+  <meta name="description" content="Analyze suspicious calls, identify scam patterns, and understand your risk before it's too late with VoxShield AI.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/analyzer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.svg" alt="VoxShield AI Logo">
+      </a>
+      
+      <button class="hamburger" id="hamburgerToggle" aria-label="Toggle navigation">☰</button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="analyzer.html" class="nav-link">Voice Analyzer</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="history.html" class="nav-link">History</a></li>
+        <li><a href="#" class="nav-link btn-privacy-modal">Privacy</a></li>
+        <li><a href="analyzer.html" class="btn btn-primary">Analyze Voice</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Home Content -->
+  <main class="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-text">
+        <span class="hero-tagline">🛡️ Client-Side AI Scam Defense</span>
+        <h1 class="hero-title">
+          AI-Based <br>
+          <span class="hero-title-gradient">Voice Scam Detection</span>
+        </h1>
+        <p class="hero-subtitle">
+          "Detect the voice. Understand the risk. Stay protected."
+        </p>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">
+          Analyze suspicious telephone calls, identify coercive social engineering patterns, and evaluate risk before sharing sensitive financial or personal information.
+        </p>
+        <div class="hero-actions">
+          <a href="analyzer.html" class="btn btn-primary">
+            <span>🎙️ Analyze Voice</span>
+          </a>
+          <a href="analyzer.html?demo=true" class="btn btn-secondary">
+            <span>⚡ Try Demo</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="waveform-box">
+          <canvas id="heroWaveformCanvas" class="waveform-canvas"></canvas>
+          <div style="position: absolute; bottom: 15px; background: rgba(15, 23, 42, 0.85); padding: 0.4rem 1rem; border-radius: 999px; border: 1px solid var(--border-glow); font-size: 0.85rem; color: var(--accent-cyan);">
+            📡 Real-Time Acoustic & Text Pattern Monitor
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Capabilities Grid -->
+    <section style="margin-top: 4rem;">
+      <div class="page-header">
+        <h2 class="page-title">Next-Gen Voice Threat Protection</h2>
+        <p class="page-subtitle">Comprehensive client-side intelligence built to combat telephone fraud, imposter coercion, and OTP theft.</p>
+      </div>
+
+      <div class="threat-grid">
+        <div class="glass-card">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🎙️</div>
+          <h3 style="margin-bottom: 0.5rem; color: #fff;">Multi-Input Analysis</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Upload recorded audio calls (MP3, WAV, M4A), record live browser microphone input, or analyze call transcripts directly.</p>
+        </div>
+
+        <div class="glass-card">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🌐</div>
+          <h3 style="margin-bottom: 0.5rem; color: #fff;">Multilingual Recognition</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Detect scam keywords across English, Tamil, and Tanglish dialect patterns (e.g. "OTP sollunga", "account block aagum").</p>
+        </div>
+
+        <div class="glass-card">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🔒</div>
+          <h3 style="margin-bottom: 0.5rem; color: #fff;">Privacy-First Architecture</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">100% Client-Side operation. Audio recordings and call logs stay local in your web browser. No cloud upload required.</p>
+        </div>
+
+        <div class="glass-card">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">📊</div>
+          <h3 style="margin-bottom: 0.5rem; color: #fff;">Explainable AI Scores</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Get transparent 0–100 risk scores, chronological event timelines, threat category breakdown, and safety recommendations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Banner Card -->
+    <section style="margin-top: 5rem;">
+      <div class="glass-card" style="border-color: var(--accent-cyan); background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(0, 242, 254, 0.05)); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+        <div>
+          <span class="badge badge-safe" style="margin-bottom: 0.5rem;">🛡️ Privacy Guaranteed</span>
+          <h3 style="font-size: 1.5rem; color: #fff; margin-bottom: 0.25rem;">Your Audio Stays In Your Browser</h3>
+          <p style="color: var(--text-muted); max-width: 650px;">VoxShield AI is engineered as a privacy-preserving static web client. Audio processing, speech recognition, and risk pattern evaluation take place entirely on your device.</p>
+        </div>
+        <button class="btn btn-secondary btn-privacy-modal">Read Privacy Specs</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Privacy Modal Dialog -->
+  <div class="modal-overlay" id="privacyModal">
+    <div class="modal-box">
+      <button class="modal-close" id="privacyModalClose">&times;</button>
+      <h3 style="color: var(--accent-cyan); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+        🛡️ Privacy First System Architecture
+      </h3>
+      <p style="color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6;">
+        VoxShield AI is designed as a privacy-preserving client-side prototype. Audio processing and risk analysis are performed locally wherever browser capabilities allow. No audio is uploaded to external server databases by this static client.
+      </p>
+      <ul style="color: var(--text-main); line-height: 1.8; margin-left: 1.25rem; margin-bottom: 1.5rem;">
+        <li>✅ <strong>No Account Required:</strong> Instant anonymous access.</li>
+        <li>✅ <strong>Zero Server Database:</strong> No audio recordings stored remotely.</li>
+        <li>✅ <strong>Local Browser History:</strong> Analytics stored exclusively in Web `localStorage`.</li>
+        <li>✅ <strong>Open Static Architecture:</strong> GitHub Pages compatible static assets.</li>
+      </ul>
+      <button class="btn btn-primary" onclick="document.getElementById('privacyModal').classList.remove('active')">Got It</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <img src="assets/logo.svg" alt="VoxShield AI Logo">
+        </a>
+        <p>Advanced AI-driven voice scam risk assessment and social engineering prevention platform.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="analyzer.html">Voice Analyzer</a></li>
+          <li><a href="dashboard.html">Analytics Dashboard</a></li>
+          <li><a href="history.html">Call History</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Technology</h4>
+        <ul>
+          <li><a href="#">HTML5 Web Audio API</a></li>
+          <li><a href="#">MediaRecorder API</a></li>
+          <li><a href="#">Web Speech API</a></li>
+          <li><a href="#">Vanilla JavaScript NLP</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 VoxShield AI. Client-Side Prototype for Demonstration Purposes.</p>
+      <p>Disclaimer: AI Risk Assessment provides heuristic indicators and does not constitute legal proof.</p>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/scamDetector.js"></script>
+  <script src="js/recorder.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
