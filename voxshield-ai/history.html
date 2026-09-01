@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Analysis History – VoxShield AI</title>
+  <meta name="description" content="View past call analysis records, risk scores, detected threat patterns, and security reports.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/analyzer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <style>
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+
+    .history-table th, .history-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .history-table th {
+      background: rgba(30, 41, 59, 0.7);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .history-table tbody tr:hover {
+      background: rgba(0, 242, 254, 0.04);
+    }
+
+    .table-container {
+      overflow-x: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+    }
+  </style>
+</head>
+<body id="historyApp">
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.svg" alt="VoxShield AI Logo">
+      </a>
+      
+      <button class="hamburger" id="hamburgerToggle" aria-label="Toggle navigation">☰</button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="analyzer.html" class="nav-link">Voice Analyzer</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="history.html" class="nav-link active">History</a></li>
+        <li><a href="#" class="nav-link btn-privacy-modal">Privacy</a></li>
+        <li><a href="analyzer.html" class="btn btn-primary">Analyze Voice</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <div class="page-header">
+      <h1 class="page-title">Analysis History Log</h1>
+      <p class="page-subtitle">Review historical voice scam risk assessments stored securely in your web browser local storage.</p>
+    </div>
+
+    <!-- Filter & Actions Header Bar -->
+    <div class="glass-card" style="margin-bottom: 2rem; padding: 1.25rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        
+        <div style="position: relative; flex: 1; max-width: 400px;">
+          <input type="text" id="historySearch" class="transcript-textarea" style="height: 44px; padding-left: 2.5rem;" placeholder="Search history by call name or risk...">
+          <span style="position: absolute; left: 1rem; top: 11px; color: var(--text-muted);">🔍</span>
+        </div>
+
+        <button id="btnClearAllHistory" class="btn btn-danger btn-sm">
+          🗑️ Clear All Logs
+        </button>
+
+      </div>
+    </div>
+
+    <!-- History Data Table -->
+    <div class="table-container">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Date & Time</th>
+            <th>File / Call Input</th>
+            <th>Risk Score</th>
+            <th>Risk Level</th>
+            <th>Threats Detected</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="historyTableBody">
+          <!-- Populated by history.js -->
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <!-- Inspection Modal Dialog -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal-box" style="max-width: 700px;">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;" id="modalTitle">Analysis Details</h3>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Privacy Modal -->
+  <div class="modal-overlay" id="privacyModal">
+    <div class="modal-box">
+      <button class="modal-close" id="privacyModalClose">&times;</button>
+      <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;">🛡️ Privacy Specs</h3>
+      <p style="color: var(--text-muted);">All call logs and transcripts are saved only in your web browser LocalStorage.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+      <p>© 2026 VoxShield AI. Client-Side Voice Scam Detection System.</p>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
